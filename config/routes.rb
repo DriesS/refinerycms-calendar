@@ -5,6 +5,7 @@ Refinery::Core::Engine.routes.append do
     resources :events, :only => [:index, :show] do
       get :archive, :on => :collection
     end
+    resources :categories, :only => [:show]
   end
 
   # Admin routes
@@ -26,6 +27,12 @@ Refinery::Core::Engine.routes.append do
           post :update_positions
         end
       end
+    end
+  end
+
+    namespace :calendar, :path => '' do
+    namespace :admin, :path => 'refinery/calendar' do
+      resources :categories
     end
   end
 

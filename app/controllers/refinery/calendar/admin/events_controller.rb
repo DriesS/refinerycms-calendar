@@ -12,6 +12,7 @@ module Refinery
         private
         def find_venues
           @venues = Venue.order('name')
+          @categories = Category.order('title')
         end
       end
     end

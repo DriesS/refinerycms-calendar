@@ -37,6 +37,11 @@
   </div>
 
   <div class='field'>
+    <%= f.label :category_id, 'Category' %>
+    <%= f.collection_select :category_id, @categories, :id, :title, { :include_blank => 'None' }, :class => 'chzn-select', :'data-placeholder' => 'Search Categories', :style => 'width: 300px;' %>
+  </div>
+
+  <div class='field'>
     <%= f.label :excerpt -%>
     <%= f.text_area :excerpt, :size => '65x5'  -%>
   </div>

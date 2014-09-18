@@ -3,6 +3,9 @@
 <% end %>
 
 <% content_for :side_body do %>
+  <span>
+    <%= @event.category.title if @event.category.present? %>
+  </span>
   <h4><%= t('.details', default: 'Event Details') %></h4>
   <h5><%= @event.venue_name %></h5>
 

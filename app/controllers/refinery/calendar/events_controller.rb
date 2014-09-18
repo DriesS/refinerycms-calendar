@@ -5,6 +5,7 @@ module Refinery
 
       def index
         @events = Event.upcoming.chronological
+        @categories = Category.all
 
         # you can use meta fields from your model instead (e.g. browser_title)
         # by swapping @page for @event in the line below:
