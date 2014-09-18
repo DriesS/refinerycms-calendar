@@ -23,7 +23,7 @@ module Refinery
                 :allow_nil => true
 
       scope :featured, where(:featured => true)
-      scope :upcoming, lambda { where('refinery_calendar_events.starts_at >= ?', Time.now) }
+      scope :upcoming, lambda { where('refinery_calendar_events.ends_at <= ?', Time.now) }
       scope :archive,  lambda { where('refinery_calendar_events.starts_at < ?',  Time.now) }
 
       scope :starting_on_day, lambda { |day| where(starts_at: day.beginning_of_day..day.tomorrow.beginning_of_day) }
