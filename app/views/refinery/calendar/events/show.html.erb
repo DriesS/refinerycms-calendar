@@ -1,8 +1,8 @@
-<% content_for :body_content_title do %>
+<% content_for :title do %>
   <%= @event.title %>
 <% end %>
 
-<% content_for :body_content_left do %>
+<% content_for :body do %>
   <h4><%= t('.details', default: 'Event Details') %></h4>
   <h5><%= @event.venue_name %></h5>
 

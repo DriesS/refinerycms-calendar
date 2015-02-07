@@ -13,6 +13,10 @@ module Refinery
         def find_venues
           @venues = Venue.order('name')
         end
+
+        def event_params
+          params.require(:event).permit(:title, :from, :to, :registration_link, :excerpt, :description, :featured, :position, :venue_id, :image_id)
+        end
       end
     end
   end
